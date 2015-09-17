@@ -61,8 +61,7 @@ app.get('/users/delete/:username', function(req, res){
       });
       res.redirect('https://www.youtube.com/watch?v=1XZGHOxnCto')
     }
-else
-    if(req.body.password == req.body.confirm){
+elseif(req.body.password == req.body.confirm){
       user.create({
           username: req.body.username,
           password: req.body.password,
