@@ -1,0 +1,70 @@
+.title{
+  text-decoration: underline;
+  color: blue;
+  text-align: center;
+  font-style: italic;
+  font-size: 50;
+}
+
+.start{
+  font-size: 25;
+  color: #f40fea;
+}
+
+.specificP{
+  font-size: 30;
+  color: #7dd547;
+}
+
+p{
+  font-size: 10;
+}
+
+body {
+  background-image: url("elephant.jpg");
+  background-size:  100% 100%;
+  background-repeat: no-repeat;
+}
+
+.question{
+  font-size: 25;
+  color: #e63220;
+}
+
+.answer{
+  font-size: 25;
+  color: rgb(24, 155, 210);
+  text-align: center;
+}
+
+.left{
+  text-align: left;
+}
+
+.center{
+    color: purple;
+  text-align: center;
+}
+
+.right{
+  font-size: 30;
+  text-align: right;
+  color: yellow;
+}
+
+.yellow{
+  color: yellow;
+}
+
+.table{
+    border: 1px solid black;
+    border-collapse: collapse;
+
+.padding {
+  padding: 5px;
+}
+
+.link {
+  font-size: 60;
+  color: purple;
+}

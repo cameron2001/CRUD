@@ -1,0 +1,40 @@
+<%- include('header.ejs') -%>
+  <form action="/users/update/<%= user.username %>" method="post" >
+
+<br>
+<br>
+<br>
+
+<% if (locals.message) { %>
+  <h3 style="color: red" ><%= message %></h3>
+<% } %>
+
+<h3 style="color: yellow" >edit username: <input type="text" name="username" value="<%= user.username  %>"></h3>
+
+
+<h3 style="color: yellow" >edit title:
+  <select name="title">
+    <option value="Mr">Mr</option>
+    <option value="Miss">Miss</option>
+    <option value="Mrs">Mrs</option>
+    <option value="Master">Master</option>
+  </select></h3>
+
+
+<h3 style="color: yellow" >edit name:     <input type="text" name="name"  value="<%= user.name  %>"></h3>
+
+
+<h3 style="color: yellow" >edit password:     <input type="text" name="password" value="<%= user.password %>"> </h3>
+
+<h3 style="color: yellow" >confirm password:     <input type="text" name="confirm" value="<%= user.password %>"> </h3>
+
+
+
+<input type="submit" value="Submit" />
+<br>
+<br>
+</form>
+
+<a class="link", href="http://localhost:8126">go home</a>
+
+<%- include('footer.ejs') -%>

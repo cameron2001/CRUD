@@ -1,0 +1,45 @@
+<%- include('header.ejs') -%>
+
+
+<table class="table" style="width:100%">
+  <tr>
+
+    <th class=class="table">Title   </th>
+    <th class=class="table">Username</th>
+    <th class=class="table">Password</th>
+    <th class=class="table">Name    </th>
+    <th class=class="table">edit    </th>
+    <th class=class="table">delete  </th>
+  </tr>
+<% users.forEach(function(user){ %>
+  <tr>
+
+
+  <td style="text-align:center"><u><%= user.title    %> </u> </td>
+
+  <td style="text-align:center"><u><%= user.username %> </u> </td>
+
+  <td style="text-align:center"><u><%= user.password %> </u> </td>
+
+  <td style="text-align:center"><u><%= user.name     %> </u> </td>
+
+  <td style="text-align:center" class="yellow">
+    <input type="button" onclick="location.href='/users/update/<%=user.username %>';" value="Edit <%=user.username %>"  class="btn btn-primary"/>
+  </td>
+
+  <td style="text-align:center">
+    <button type="button" class="btn btn-danger btn-lg" onclick="location.href='/users/delete/<%=user.username %>';">
+        <span class="glyphicon glyphicon-star"></span> delete <%=user.username %>
+    </button>
+  </td>
+
+
+  </tr>
+  <% }); %>
+  </table>
+
+  <a , href="http://localhost:8126">go home</a>
+  <br>
+  <br>
+  <br>
+<%- include('footer.ejs') -%>
