@@ -52,14 +52,14 @@ app.get('/users/delete/:username', function(req, res){
   })
 
   app.post('/signup', function(req, res){
-    if(req.body.name.toLowerCase() == 'dan'){
+
       user.create({
           username: req.body.username,
           password: req.body.password,
           name: req.body.name,
           title: req.body.title,
       });
-      res.redirect('https://www.youtube.com/watch?v=1XZGHOxnCto')
+    
     }
 
     if(req.body.password == req.body.confirm){
