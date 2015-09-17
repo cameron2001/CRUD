@@ -41,7 +41,6 @@ app.get('/carousel', function(req, res){
   });
 
 app.get('/users/delete/:username', function(req, res){
-  console.log('we are delting')
   user.findOne({username: req.params.username}, function(err, user){
     user.remove();
     res.redirect('/users');
