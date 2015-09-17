@@ -52,16 +52,26 @@ app.get('/users/delete/:username', function(req, res){
   })
 
   app.post('/signup', function(req, res){
-    if(req.body.name.toLowerCase() == 'dan'){
+    /*if(req.body.name.toLowerCase() == 'dan'){
       user.create({
           username: req.body.username,
           password: req.body.password,
           name: req.body.name,
           title: req.body.title,
       });
-      res.redirect('https://www.youtube.com/watch?v=1XZGHOxnCto')
+      res.redirect('https://www.youtube.com/watch?v=1XZGHOxnCto')*/
+
+      if(req.body.password == req.body.confirm){
+       user.create({
+           username: req.body.username,
+           password: req.body.password,
+           name: req.body.name,
+           title: req.body.title,
+       });
+       res.redirect('/users');
     }
-elseif(req.body.password == req.body.confirm){
+
+     /*if(req.body.password == req.body.confirm){
       user.create({
           username: req.body.username,
           password: req.body.password,
@@ -70,7 +80,7 @@ elseif(req.body.password == req.body.confirm){
       });
       res.redirect('/users');
 
-    }else{
+    }*/else{
       res.redirect('/signup' + '?message=passwords dont match');
     }
 

@@ -1,7 +1,7 @@
 <%- include('header.ejs') -%>
 
-
-<table class="table" style="width:100%">
+<div class="container">
+<table class="table table-hover" style="width:100%">
   <tr>
 
     <th class=class="table">Title   </th>
@@ -23,8 +23,10 @@
 
   <td style="text-align:center"><u><%= user.name     %> </u> </td>
 
-  <td style="text-align:center" class="yellow">
-    <input type="button" onclick="location.href='/users/update/<%=user.username %>';" value="Edit <%=user.username %>"  class="btn btn-primary"/>
+  <td style="text-align:center">
+    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/users/edit/<%=user.username %>';" value="Edit <%=user.username %>">
+        <span class="glyphicon glyphicon-wrench"></span> edit <%=user.username %>
+    </button>
   </td>
 
   <td style="text-align:center">
@@ -37,6 +39,7 @@
   </tr>
   <% }); %>
   </table>
+</div>
 
   <a , href="http://localhost:8126">go home</a>
   <br>
