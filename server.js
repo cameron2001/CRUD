@@ -7,8 +7,11 @@ var bodyParser = require('body-parser');
 var port;
 
 var app = express()
-
-port = process.env.PORT;
+if (process.argv.indexOf('dev') > -1){
+  port = 8126;
+}else{
+   port = process.env.PORT;
+}
 
 app.use('/public', express.static(__dirname + '/public'));
 app.use(bodyParser());
@@ -21,8 +24,11 @@ var server = app.listen(port, function() {
 
 /* Database connection */
 var mongoose = require('mongoose');
-mogoose.connect('mongodb://cameron:cameron@ds042898.mongolab.com:42898/cameron-lm');
-
+if(port = 8126){
+   mongoose.connect('mongodb://localhost/crudexample');
+}else{
+  mongoose.connect('mongodb://cameron:cameron@ds042898.mongolab.com:42898/cameron-lm');
+}
 
 var db = mongoose.connection;
 // Hi Cameron
