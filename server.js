@@ -5,7 +5,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 
 var app = express()
-var port = 80-;
+var port = process.env.PORT || 8126;
 app.use('/public', express.static(__dirname + '/public'));
 app.use(bodyParser());
 app.set('view engine', 'ejs');
@@ -17,7 +17,12 @@ var server = app.listen(port, function() {
 
 /* Database connection */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/crudexample');
+if(port = process.env.PORT){
+   mogoose.connect('mongodb://cameron:cameron@ds042898.mongolab.com:42898/cameron-lm');
+}else{
+  mongoose.connect('mongodb://localhost/crudexample');
+}
+
 var db = mongoose.connection;
 // Hi Cameron
 db.on('error', console.error.bind(console, 'database connection error:'));
