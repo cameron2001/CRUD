@@ -2,15 +2,18 @@
 
 /* Server Setup */
 var express = require('express');
-var bodyPasrer = require('body-parser');
+var bodyParser = require('body-parser');
 
 var app = express()
-var port = 80;
-app.listen(port);
+var port = 80-;
 app.use('/public', express.static(__dirname + '/public'));
-app.use(bodyPasrer());
+app.use(bodyParser());
 app.set('view engine', 'ejs');
 require('./routes/routes.js')(app);
+
+var server = app.listen(port, function() {
+  console.log("Listening to http://localhost:" + port);
+});
 
 /* Database connection */
 var mongoose = require('mongoose');
@@ -21,5 +24,3 @@ db.on('error', console.error.bind(console, 'database connection error:'));
 db.once('open', function() {
     console.log('Connected to database');
 });
-
-console.log("Listening to http://localhost:" + port);
