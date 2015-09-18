@@ -3,14 +3,18 @@
 /* Server Setup */
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var port;
 
-var app = express()
+var app = express();
+/* Databse Connection */
 if (process.argv.indexOf('dev') > -1){
   port = 8126;
+  mongoose.connect('mongodb://localhost/crudexample');
 }else{
    port = process.env.PORT;
+   mongoose.connect('mongodb://cameron:cameron@ds042898.mongolab.com:42898/cameron-lm');
 }
 
 app.use('/public', express.static(__dirname + '/public'));
@@ -21,14 +25,6 @@ require('./routes/routes.js')(app);
 var server = app.listen(port, function() {
   console.log("Listening to http://localhost:" + port);
 });
-
-/* Database connection */
-var mongoose = require('mongoose');
-if(port == 8126){
-   mongoose.connect('mongodb://localhost/crudexample');
-}else{
-  mongoose.connect('mongodb://cameron:cameron@ds042898.mongolab.com:42898/cameron-lm');
-}
 
 var db = mongoose.connection;
 // Hi Cameron
