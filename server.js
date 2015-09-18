@@ -5,7 +5,7 @@ var express = require('express');
 var bodyPasrer = require('body-parser');
 
 var app = express()
-var port = 8126;
+var port = 80;
 app.listen(port);
 app.use('/public', express.static(__dirname + '/public'));
 app.use(bodyPasrer());
