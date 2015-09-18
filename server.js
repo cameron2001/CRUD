@@ -24,7 +24,7 @@ var server = app.listen(port, function() {
 
 /* Database connection */
 var mongoose = require('mongoose');
-if(port = 8126){
+if(port == 8126){
    mongoose.connect('mongodb://localhost/crudexample');
 }else{
   mongoose.connect('mongodb://cameron:cameron@ds042898.mongolab.com:42898/cameron-lm');
