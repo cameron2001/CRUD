@@ -2,7 +2,7 @@
 
 <title>sign up</title>
 
-<a class="link" href="http://localhost:8126">Click here to back to home page</a>
+<%- include('navbar.ejs') -%>
 <br>
 
 <% if (locals.message) { %>
@@ -11,34 +11,48 @@
 
 <form action="/signup" method="post" >
 
-  <div class="username">
+  <div class="col-xs-2">
     <label for="username">username</label>
-    <input type="text" class="form-control" id="username" placeholder="username">
+    <input type="text" class="form-control" name="username" placeholder="username">
   </div>
 
-  <div class="passsword">
+  <div class="col-xs-2">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" class="form-control" name="password" placeholder="Password">
   </div>
 
-  <div class="confirm">
+  <div class="col-xs-2">
     <label for="confirm"> confirm Password</label>
-    <input type="password" class="form-control" id="confirm" placeholder="Password">
+    <input type="password" class="form-control" name="confirm" placeholder="Password">
   </div>
-<br>
-  <select name="title">
-    <option value="Mr">Mr</option>
-    <option value="Miss">Miss</option>
-    <option value="Mrs">Mrs</option>
-    <option value="Master">Master</option>
-  </select>
 
-  <div class="name">
+  <div class="col-xs-2">
     <label for="confirm"> name</label>
-    <input type="text" class="form-control" id="name" placeholder="name">
+    <input type="text" class="form-control" name="name" placeholder="name">
   </div>
 
-  <button type="submit" class="btn btn-default">Submit</button>
+  <div class="dropdown">
+
+    <label for="title"> Title</label>
+      <select name="title" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <option value="Mr">Mr</option>
+      <option value="Miss">Miss</option>
+      <option value="Mrs">Mrs</option>
+      <option value="Master">Master</option>
+      <option value="Over Lord">Over Lord</option>
+    </select>
+
+  </div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class ="col-sm-9">
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+</div>
+</div>
 
 </form>
 <!--

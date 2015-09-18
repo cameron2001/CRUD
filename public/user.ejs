@@ -1,4 +1,5 @@
 <%- include('header.ejs') -%>
+<%- include('navbar.ejs') -%>
 
 <div class="container">
 <table class="table table-hover" style="width:100%">
@@ -24,14 +25,14 @@
   <td style="text-align:center"><u><%= user.name     %> </u> </td>
 
   <td style="text-align:center">
-    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/users/edit/<%=user.username %>';" value="Edit <%=user.username %>">
-        <span class="glyphicon glyphicon-wrench"></span> edit <%=user.username %>
+    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/users/update/<%=user.username %>';" value="Edit <%=user.username %>">
+        <span class="glyphicon glyphicon-wrench"></span>
     </button>
   </td>
 
   <td style="text-align:center">
     <button type="button" class="btn btn-danger btn-lg" onclick="location.href='/users/delete/<%=user.username %>';">
-        <span class="glyphicon glyphicon-star"></span> delete <%=user.username %>
+        <span class="glyphicon glyphicon-trash"></span> 
     </button>
   </td>
 
@@ -41,7 +42,7 @@
   </table>
 </div>
 
-  <a , href="http://localhost:8126">go home</a>
+
   <br>
   <br>
   <br>
